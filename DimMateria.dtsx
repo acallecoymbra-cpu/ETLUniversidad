@@ -1,59 +1,59 @@
 ﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
-  DTS:CreationDate="4/25/2026 9:56:47 AM"
+  DTS:CreationDate="4/25/2026 1:04:08 PM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="DESKTOP-9GVKA0V"
   DTS:CreatorName="DESKTOP-9GVKA0V\aliva"
-  DTS:DTSID="{FC59A459-6816-4D48-B3EE-FF632DE36B14}"
+  DTS:DTSID="{0B379A88-02A1-45A1-900D-FC7F9FA966C8}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="17.0.1016.0"
   DTS:LocaleID="1033"
-  DTS:ObjectName="DimEstudiante"
+  DTS:ObjectName="DimMateria"
   DTS:PackageType="5"
-  DTS:VersionBuild="20"
-  DTS:VersionGUID="{A175D14F-322B-472E-86E8-CE396F7CC7C9}">
+  DTS:VersionBuild="22"
+  DTS:VersionGUID="{DA7A1B68-89D9-4B3C-8EAF-2F88A472A645}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[UniversidadDWDestino]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{E49830D4-19D8-4F68-8CBE-B6783BEB819B}"
+      DTS:DTSID="{D8F6AB2D-A992-4B0B-BA3F-07AF1F9185AD}"
       DTS:ObjectName="UniversidadDWDestino">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=desktop-9gvka0v;Initial Catalog=UniversidadDW;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-DimEstudiante-{E49830D4-19D8-4F68-8CBE-B6783BEB819B}desktop-9gvka0v.UniversidadDW;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=desktop-9gvka0v;Initial Catalog=UniversidadDW;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-DimMateria-{D8F6AB2D-A992-4B0B-BA3F-07AF1F9185AD}desktop-9gvka0v.UniversidadDW;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[UniversidadOLTPOrigen]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{40DF2B70-CD55-44CF-A31C-CDFBA7748B61}"
+      DTS:DTSID="{E3C618A2-C017-472E-90AA-42D1E2584942}"
       DTS:ObjectName="UniversidadOLTPOrigen">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=desktop-9gvka0v\;Initial Catalog=UniversidadDWBase;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-DimEstudiante-{40DF2B70-CD55-44CF-A31C-CDFBA7748B61}desktop-9gvka0v\.UniversidadDWBase;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=desktop-9gvka0v\;Initial Catalog=UniversidadDWBase;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-DimMateria-{E3C618A2-C017-472E-90AA-42D1E2584942}desktop-9gvka0v\.UniversidadDWBase;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{4BFDBDAB-9DF6-4909-BE37-FC58C530FFD8}"
+      DTS:DTSID="{64123365-6D9A-45C8-A947-6F45BDC3CA1F}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="DBTSValue">
       <DTS:VariableValue
-        DTS:DataType="20">0</DTS:VariableValue>
+        DTS:DataType="3">0</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{0E4714A0-EACA-43DF-A210-CD46513B5B9B}"
+      DTS:DTSID="{7E6C8D30-B658-4107-B588-9CDDCC527A50}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="LastRowValue">
@@ -63,13 +63,13 @@
   </DTS:Variables>
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Add New Estudiantes"
+      DTS:refId="Package\Add New Materias"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{C66C93B0-49FB-4C04-AED3-7B609C82A73C}"
+      DTS:DTSID="{6863BA23-E83B-4A69-B416-26BCD5D4B3A1}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Add New Estudiantes"
+      DTS:ObjectName="Add New Materias"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -77,7 +77,7 @@
           version="1">
           <components>
             <component
-              refId="Package\Add New Estudiantes\Get Row Changes"
+              refId="Package\Add New Materias\Get Row Changes"
               componentClassID="Microsoft.OLEDBSource"
               contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
               description="OLE DB Source"
@@ -101,7 +101,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">EXECUTE [dbo].[GetEstudianteChangesByRowVersion] ?,?</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">EXECUTE [dbo].[GetMateriaChangesByRowVersion] ?,?</property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -122,11 +122,11 @@
                 <property
                   dataType="System.String"
                   description="The mappings between the parameters in the SQL command and variables."
-                  name="ParameterMapping">"@start:Input",{0E4714A0-EACA-43DF-A210-CD46513B5B9B};"@end:Input",{4BFDBDAB-9DF6-4909-BE37-FC58C530FFD8};</property>
+                  name="ParameterMapping">"@start:Input",{7E6C8D30-B658-4107-B588-9CDDCC527A50};"@end:Input",{64123365-6D9A-45C8-A947-6F45BDC3CA1F};</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Add New Estudiantes\Get Row Changes.Connections[OleDbConnection]"
+                  refId="Package\Add New Materias\Get Row Changes.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[UniversidadOLTPOrigen]"
                   connectionManagerRefId="Package.ConnectionManagers[UniversidadOLTPOrigen]"
                   description="The OLE DB runtime connection used to access the database."
@@ -134,119 +134,89 @@
               </connections>
               <outputs>
                 <output
-                  refId="Package\Add New Estudiantes\Get Row Changes.Outputs[OLE DB Source Output]"
+                  refId="Package\Add New Materias\Get Row Changes.Outputs[OLE DB Source Output]"
                   name="OLE DB Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Add New Estudiantes\Get Row Changes.Outputs[OLE DB Source Output].Columns[EstudianteID]"
+                      refId="Package\Add New Materias\Get Row Changes.Outputs[OLE DB Source Output].Columns[MateriaID]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Add New Estudiantes\Get Row Changes.Outputs[OLE DB Source Output].ExternalColumns[EstudianteID]"
-                      lineageId="Package\Add New Estudiantes\Get Row Changes.Outputs[OLE DB Source Output].Columns[EstudianteID]"
-                      name="EstudianteID"
+                      externalMetadataColumnId="Package\Add New Materias\Get Row Changes.Outputs[OLE DB Source Output].ExternalColumns[MateriaID]"
+                      lineageId="Package\Add New Materias\Get Row Changes.Outputs[OLE DB Source Output].Columns[MateriaID]"
+                      name="MateriaID"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Add New Estudiantes\Get Row Changes.Outputs[OLE DB Source Output].Columns[NombreCompleto]"
+                      refId="Package\Add New Materias\Get Row Changes.Outputs[OLE DB Source Output].Columns[NombreMateria]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Add New Estudiantes\Get Row Changes.Outputs[OLE DB Source Output].ExternalColumns[NombreCompleto]"
-                      length="161"
-                      lineageId="Package\Add New Estudiantes\Get Row Changes.Outputs[OLE DB Source Output].Columns[NombreCompleto]"
-                      name="NombreCompleto"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Add New Estudiantes\Get Row Changes.Outputs[OLE DB Source Output].Columns[Carrera]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Add New Estudiantes\Get Row Changes.Outputs[OLE DB Source Output].ExternalColumns[Carrera]"
+                      externalMetadataColumnId="Package\Add New Materias\Get Row Changes.Outputs[OLE DB Source Output].ExternalColumns[NombreMateria]"
                       length="120"
-                      lineageId="Package\Add New Estudiantes\Get Row Changes.Outputs[OLE DB Source Output].Columns[Carrera]"
-                      name="Carrera"
+                      lineageId="Package\Add New Materias\Get Row Changes.Outputs[OLE DB Source Output].Columns[NombreMateria]"
+                      name="NombreMateria"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Add New Estudiantes\Get Row Changes.Outputs[OLE DB Source Output].Columns[EstadoAcademico]"
-                      codePage="1252"
-                      dataType="str"
+                      refId="Package\Add New Materias\Get Row Changes.Outputs[OLE DB Source Output].Columns[Creditos]"
+                      dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Add New Estudiantes\Get Row Changes.Outputs[OLE DB Source Output].ExternalColumns[EstadoAcademico]"
-                      length="20"
-                      lineageId="Package\Add New Estudiantes\Get Row Changes.Outputs[OLE DB Source Output].Columns[EstadoAcademico]"
-                      name="EstadoAcademico"
+                      externalMetadataColumnId="Package\Add New Materias\Get Row Changes.Outputs[OLE DB Source Output].ExternalColumns[Creditos]"
+                      lineageId="Package\Add New Materias\Get Row Changes.Outputs[OLE DB Source Output].Columns[Creditos]"
+                      name="Creditos"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Add New Estudiantes\Get Row Changes.Outputs[OLE DB Source Output].ExternalColumns[EstudianteID]"
+                      refId="Package\Add New Materias\Get Row Changes.Outputs[OLE DB Source Output].ExternalColumns[MateriaID]"
                       dataType="i4"
-                      name="EstudianteID" />
+                      name="MateriaID" />
                     <externalMetadataColumn
-                      refId="Package\Add New Estudiantes\Get Row Changes.Outputs[OLE DB Source Output].ExternalColumns[NombreCompleto]"
-                      codePage="1252"
-                      dataType="str"
-                      length="161"
-                      name="NombreCompleto" />
-                    <externalMetadataColumn
-                      refId="Package\Add New Estudiantes\Get Row Changes.Outputs[OLE DB Source Output].ExternalColumns[Carrera]"
+                      refId="Package\Add New Materias\Get Row Changes.Outputs[OLE DB Source Output].ExternalColumns[NombreMateria]"
                       codePage="1252"
                       dataType="str"
                       length="120"
-                      name="Carrera" />
+                      name="NombreMateria" />
                     <externalMetadataColumn
-                      refId="Package\Add New Estudiantes\Get Row Changes.Outputs[OLE DB Source Output].ExternalColumns[EstadoAcademico]"
-                      codePage="1252"
-                      dataType="str"
-                      length="20"
-                      name="EstadoAcademico" />
+                      refId="Package\Add New Materias\Get Row Changes.Outputs[OLE DB Source Output].ExternalColumns[Creditos]"
+                      dataType="i4"
+                      name="Creditos" />
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Add New Estudiantes\Get Row Changes.Outputs[OLE DB Source Error Output]"
+                  refId="Package\Add New Materias\Get Row Changes.Outputs[OLE DB Source Error Output]"
                   isErrorOut="true"
                   name="OLE DB Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Add New Estudiantes\Get Row Changes.Outputs[OLE DB Source Error Output].Columns[EstudianteID]"
+                      refId="Package\Add New Materias\Get Row Changes.Outputs[OLE DB Source Error Output].Columns[MateriaID]"
                       dataType="i4"
-                      lineageId="Package\Add New Estudiantes\Get Row Changes.Outputs[OLE DB Source Error Output].Columns[EstudianteID]"
-                      name="EstudianteID" />
+                      lineageId="Package\Add New Materias\Get Row Changes.Outputs[OLE DB Source Error Output].Columns[MateriaID]"
+                      name="MateriaID" />
                     <outputColumn
-                      refId="Package\Add New Estudiantes\Get Row Changes.Outputs[OLE DB Source Error Output].Columns[NombreCompleto]"
-                      codePage="1252"
-                      dataType="str"
-                      length="161"
-                      lineageId="Package\Add New Estudiantes\Get Row Changes.Outputs[OLE DB Source Error Output].Columns[NombreCompleto]"
-                      name="NombreCompleto" />
-                    <outputColumn
-                      refId="Package\Add New Estudiantes\Get Row Changes.Outputs[OLE DB Source Error Output].Columns[Carrera]"
+                      refId="Package\Add New Materias\Get Row Changes.Outputs[OLE DB Source Error Output].Columns[NombreMateria]"
                       codePage="1252"
                       dataType="str"
                       length="120"
-                      lineageId="Package\Add New Estudiantes\Get Row Changes.Outputs[OLE DB Source Error Output].Columns[Carrera]"
-                      name="Carrera" />
+                      lineageId="Package\Add New Materias\Get Row Changes.Outputs[OLE DB Source Error Output].Columns[NombreMateria]"
+                      name="NombreMateria" />
                     <outputColumn
-                      refId="Package\Add New Estudiantes\Get Row Changes.Outputs[OLE DB Source Error Output].Columns[EstadoAcademico]"
-                      codePage="1252"
-                      dataType="str"
-                      length="20"
-                      lineageId="Package\Add New Estudiantes\Get Row Changes.Outputs[OLE DB Source Error Output].Columns[EstadoAcademico]"
-                      name="EstadoAcademico" />
-                    <outputColumn
-                      refId="Package\Add New Estudiantes\Get Row Changes.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Add New Materias\Get Row Changes.Outputs[OLE DB Source Error Output].Columns[Creditos]"
                       dataType="i4"
-                      lineageId="Package\Add New Estudiantes\Get Row Changes.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Add New Materias\Get Row Changes.Outputs[OLE DB Source Error Output].Columns[Creditos]"
+                      name="Creditos" />
+                    <outputColumn
+                      refId="Package\Add New Materias\Get Row Changes.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Add New Materias\Get Row Changes.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Add New Estudiantes\Get Row Changes.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Add New Materias\Get Row Changes.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Add New Estudiantes\Get Row Changes.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Add New Materias\Get Row Changes.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -262,34 +232,34 @@
       DTS:refId="Package\Get Database Row Version"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{292857CB-DF32-4FD1-B63B-40B6A1815266}"
+      DTS:DTSID="{1558F812-3592-4A50-B950-87955ADBD4CC}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get Database Row Version"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{40DF2B70-CD55-44CF-A31C-CDFBA7748B61}"
+          SQLTask:Connection="{E3C618A2-C017-472E-90AA-42D1E2584942}"
           SQLTask:SqlStatementSource="EXECUTE [dbo].[GetDatabaseRowVersion] " xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Get Estudiante RowVersion"
+      DTS:refId="Package\Get Materia RowVersion"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{6D4A108B-B959-4680-A277-BC240BE83B2C}"
+      DTS:DTSID="{4AB02286-B209-4B69-A2BE-9ACC39FB8B1E}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Get Estudiante RowVersion"
+      DTS:ObjectName="Get Materia RowVersion"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{E49830D4-19D8-4F68-8CBE-B6783BEB819B}"
-          SQLTask:SqlStatementSource="EXECUTE [dbo].[GetLastPackageRowVersion] @tableName='Estudiante'"
+          SQLTask:Connection="{D8F6AB2D-A992-4B0B-BA3F-07AF1F9185AD}"
+          SQLTask:SqlStatementSource="EXECUTE [dbo].[GetLastPackageRowVersion] @tableName='Materia'"
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
             SQLTask:ResultName="LastRowValue"
@@ -301,27 +271,27 @@
       DTS:refId="Package\Initialize Staging"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{78C30908-7D42-4ACA-B992-D24EF71EB1DD}"
+      DTS:DTSID="{DFE7FF12-AD8C-482A-90EF-1BBAE35D52EF}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Initialize Staging"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{E49830D4-19D8-4F68-8CBE-B6783BEB819B}"
-          SQLTask:SqlStatementSource="TRUNCATE TABLE [staging].[estudiante];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:Connection="{D8F6AB2D-A992-4B0B-BA3F-07AF1F9185AD}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE [staging].[materia];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Sync Estudiante Data"
+      DTS:refId="Package\Sync Materia Data"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{E7FFA657-BB99-4325-A907-C65EFF79BE5B}"
+      DTS:DTSID="{1FF6C9EF-0AAC-4A45-A2D7-0F33E0729A65}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Sync Estudiante Data"
+      DTS:ObjectName="Sync Materia Data"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:ThreadHint="1">
       <DTS:Variables />
@@ -333,12 +303,12 @@
       DTS:refId="Package\Update LastRowVersion"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{BDBF640B-9F6A-41BD-B788-F341868FEDC4}"
+      DTS:DTSID="{C5447296-6E84-42A6-88FC-5F0CB8269B03}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Update LastRowVersion"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
@@ -349,16 +319,16 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{52CEAAEF-A45B-404C-96FF-DCCC27B8FC89}"
+      DTS:DTSID="{383DF76E-64AB-445A-8A76-FF4E5A223BF8}"
       DTS:From="Package\Get Database Row Version"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
-      DTS:To="Package\Get Estudiante RowVersion" />
+      DTS:To="Package\Get Materia RowVersion" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{688B344F-2C1C-4EC8-B2EA-A69BC827DBA0}"
-      DTS:From="Package\Get Estudiante RowVersion"
+      DTS:DTSID="{8239F15F-AD34-4E07-8841-0B0F3AF5E451}"
+      DTS:From="Package\Get Materia RowVersion"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
       DTS:To="Package\Initialize Staging" />
@@ -378,53 +348,53 @@
         <NodeLayout
           Size="212,42"
           Id="Package\Get Database Row Version"
-          TopLeft="310,64" />
+          TopLeft="241,85" />
         <NodeLayout
-          Size="214,42"
-          Id="Package\Get Estudiante RowVersion"
-          TopLeft="311,124" />
+          Size="199,42"
+          Id="Package\Get Materia RowVersion"
+          TopLeft="224,172" />
         <NodeLayout
           Size="159,42"
           Id="Package\Initialize Staging"
-          TopLeft="343,213" />
+          TopLeft="320,261" />
         <NodeLayout
-          Size="184,42"
-          Id="Package\Add New Estudiantes"
-          TopLeft="317,302" />
+          Size="169,42"
+          Id="Package\Add New Materias"
+          TopLeft="355,368" />
         <NodeLayout
-          Size="185,42"
-          Id="Package\Sync Estudiante Data"
-          TopLeft="302,398" />
+          Size="169,42"
+          Id="Package\Sync Materia Data"
+          TopLeft="247,450" />
         <NodeLayout
           Size="198,42"
           Id="Package\Update LastRowVersion"
-          TopLeft="314,502" />
+          TopLeft="572,484" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="310,85">
+          TopLeft="347,127">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="1,60"
+              EndConnector="-23.5,45"
               Start="0,0"
-              End="-6.5,60">
+              End="-23.5,37.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-18.5,0" />
+                    End="0,18.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="-18.5,0"
-                    Point2="-22.5,0"
-                    Point3="-22.5,4" />
+                    Point1="0,18.5"
+                    Point2="0,22.5"
+                    Point3="-4,22.5" />
                   <mssgle:LineSegment
-                    End="-22.5,56" />
+                    End="-19.5,22.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="-22.5,56"
-                    Point2="-22.5,60"
-                    Point3="-18.5,60" />
+                    Point1="-19.5,22.5"
+                    Point2="-23.5,22.5"
+                    Point3="-23.5,26.5" />
                   <mssgle:LineSegment
-                    End="-6.5,60" />
+                    End="-23.5,37.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -435,18 +405,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="420.25,166">
+          TopLeft="323.5,214">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,47"
+              EndConnector="76,47"
               Start="0,0"
-              End="0,39.5">
+              End="76,39.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,39.5" />
+                    End="0,19.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.5"
+                    Point2="0,23.5"
+                    Point3="4,23.5" />
+                  <mssgle:LineSegment
+                    End="72,23.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="72,23.5"
+                    Point2="76,23.5"
+                    Point3="76,27.5" />
+                  <mssgle:LineSegment
+                    End="76,39.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -459,19 +441,19 @@
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\Add New Estudiantes">
+    design-time-name="Package\Add New Materias">
     <LayoutInfo>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
           Size="169,42"
-          Id="Package\Add New Estudiantes\Get Row Changes"
-          TopLeft="476,78" />
+          Id="Package\Add New Materias\Get Row Changes"
+          TopLeft="368,51" />
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Add New Estudiantes\Get Row Changes">
+    design-time-name="Package\Add New Materias\Get Row Changes">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
