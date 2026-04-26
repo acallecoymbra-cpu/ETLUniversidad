@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="54"
-  DTS:VersionGUID="{8E97A334-DCC0-4892-96C0-45BBB177370E}">
+  DTS:VersionBuild="57"
+  DTS:VersionGUID="{60558E03-47E9-437A-BE9C-5B5E0196A6BB}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -908,6 +908,14 @@ where [refTable].[DocenteKey] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="173,42"
+          Id="Package\Add New Docentes"
+          TopLeft="408,269" />
+        <NodeLayout
+          Size="159,42"
+          Id="Package\Eliminar filas Staging"
+          TopLeft="208,267" />
+        <NodeLayout
           Size="212,42"
           Id="Package\Get Database Row Version"
           TopLeft="179,82" />
@@ -915,14 +923,6 @@ where [refTable].[DocenteKey] = ?</property>
           Size="203,42"
           Id="Package\Get Docente RowVersion"
           TopLeft="186,168" />
-        <NodeLayout
-          Size="159,42"
-          Id="Package\Eliminar filas Staging"
-          TopLeft="208,267" />
-        <NodeLayout
-          Size="173,42"
-          Id="Package\Add New Docentes"
-          TopLeft="408,269" />
         <NodeLayout
           Size="173,42"
           Id="Package\Sync Docente Data"
@@ -1062,13 +1062,21 @@ where [refTable].[DocenteKey] = ?</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="115,42"
+          Id="Package\Add New Docentes\Lookup"
+          TopLeft="448,146" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\Add New Docentes\Add news Docentes"
+          TopLeft="610,293" />
+        <NodeLayout
           Size="169,42"
           Id="Package\Add New Docentes\Get Row Changes"
           TopLeft="425,66" />
         <NodeLayout
-          Size="115,42"
-          Id="Package\Add New Docentes\Lookup"
-          TopLeft="448,146" />
+          Size="149,42"
+          Id="Package\Add New Docentes\LOAD Staging"
+          TopLeft="336,266" />
         <EdgeLayout
           Id="Package\Add New Docentes.Paths[OLE DB Source Output]"
           TopLeft="507.5,108">
@@ -1088,50 +1096,8 @@ where [refTable].[DocenteKey] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="149,42"
-          Id="Package\Add New Docentes\LOAD Staging"
-          TopLeft="336,266" />
-        <NodeLayout
-          Size="177,42"
-          Id="Package\Add New Docentes\Add news Docentes"
-          TopLeft="610,293" />
-        <EdgeLayout
-          Id="Package\Add New Docentes.Paths[Lookup Match Output]"
-          TopLeft="487.666666666667,188">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-77.1666666666667,78"
-              Start="0,0"
-              End="-77.1666666666667,70.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,27.8421955403088" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,27.8421955403088"
-                    Point2="0,31.8421955403088"
-                    Point3="-4,31.8421955403088" />
-                  <mssgle:LineSegment
-                    End="-73.1666666666667,31.8421955403088" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-73.1666666666667,31.8421955403088"
-                    Point2="-77.1666666666667,31.8421955403088"
-                    Point3="-77.1666666666667,35.8421955403088" />
-                  <mssgle:LineSegment
-                    End="-77.1666666666667,70.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-86.7747200520834,36.8421955403088,96.3827734375,11.609375"
+              BoundingBox="0,0,0,0"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -1171,24 +1137,52 @@ where [refTable].[DocenteKey] = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Add New Docentes.Paths[Lookup Match Output]"
+          TopLeft="487.666666666667,188">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-77.1666666666667,78"
+              Start="0,0"
+              End="-77.1666666666667,70.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.8421955403088" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,27.8421955403088"
+                    Point2="0,31.8421955403088"
+                    Point3="-4,31.8421955403088" />
+                  <mssgle:LineSegment
+                    End="-73.1666666666667,31.8421955403088" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-73.1666666666667,31.8421955403088"
+                    Point2="-77.1666666666667,31.8421955403088"
+                    Point3="-77.1666666666667,35.8421955403088" />
+                  <mssgle:LineSegment
+                    End="-77.1666666666667,70.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-86.7747200520834,36.8421955403088,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Add New Docentes\Get Row Changes">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Add New Docentes\Lookup">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -1198,7 +1192,7 @@ where [refTable].[DocenteKey] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -1206,7 +1200,7 @@ where [refTable].[DocenteKey] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Add New Docentes\LOAD Staging">
+    design-time-name="Package\Add New Docentes\Add news Docentes">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -1219,7 +1213,15 @@ where [refTable].[DocenteKey] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Add New Docentes\Add news Docentes">
+    design-time-name="Package\Add New Docentes\Get Row Changes">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Add New Docentes\LOAD Staging">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

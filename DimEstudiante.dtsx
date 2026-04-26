@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="DimEstudiante"
   DTS:PackageType="5"
-  DTS:VersionBuild="38"
-  DTS:VersionGUID="{32D22651-4699-4552-8967-15171B8A3877}">
+  DTS:VersionBuild="39"
+  DTS:VersionGUID="{C0BE57B4-055F-41CB-8272-0AA8266B2742}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>

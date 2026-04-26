@@ -2,13 +2,13 @@
 <BuildLog xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <ProjectInfo>
     <Name>IntegrationServiceUniversidad</Name>
-    <LastWriteTime>2026-04-25T23:40:53.5323653Z</LastWriteTime>
+    <LastWriteTime>2026-04-26T18:33:13.7121424Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>DimEstudiante.dtsx</Name>
-      <LastWriteTime>2026-04-26T02:34:39.1577742Z</LastWriteTime>
+      <LastWriteTime>2026-04-26T02:38:02.3158764Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -18,12 +18,12 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DimDocente.dtsx</Name>
-      <LastWriteTime>2026-04-26T02:34:41.0683772Z</LastWriteTime>
+      <LastWriteTime>2026-04-26T18:45:42.4111146Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>FactInscripciones.dtsx</Name>
-      <LastWriteTime>2026-04-26T02:34:38.554052Z</LastWriteTime>
+      <LastWriteTime>2026-04-26T18:45:42.5765111Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

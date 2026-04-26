@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">DESKTOP-9GVKA0V</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAATzCkIylhY0mt6ICVkZvxpgAAAAACAAAAAAAQZgAAAAEAACAAAADDXdhrIy5RaV1Zw4vJYMZGDWy2OFDG9wpaiosPtT8+6QAAAAAOgAAAAAIAACAAAADC4D56BhI3JxB935Mi6TsXA80Az1J5VskwMsQL+XYNkZAAAABLnKddYQmSrDc+p6hRsBe7MI0+INagYxw+1v5ZkftM5Ic0Vkkm0MbSiQSy5sY/RTLJ83LA19OQP6pZy5nvc5TvQTK9w6vX9ApCkrdAanBbIJtZVz9RCpt458nnkIyGwznlkSIpCN2rRsVjDpQeuRORik2+dSEU9TiDM6VpRKcYwDuHPcvV9b1pTXC+E0NrqqRAAAAAJd5mW1vnemT/X9wpx4E8TGjGqCpFOwakGlWJfpGmG3nFGMzDmFVOgE/b2lviV0uhEytEqKRSjnxfNfOoFLI0aQ==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAATzCkIylhY0mt6ICVkZvxpgAAAAACAAAAAAAQZgAAAAEAACAAAAAzgnNhJRjeeGJtHuDv72Ql+XuLl84qRqKCfcHCON30lAAAAAAOgAAAAAIAACAAAACyC9ScO+Rq2y6Jec4IeIf0j46ZAzm2UJx1cEpn23NIZZAAAABib5jOYkiw0xGF2SNdQVHurL4UwlFIjqDdLPq3RW+4wTLXv6HVHLKNhjqcJ74jfgdAZfxbL55EXMILfhUzgjZWTvy0TenVvLboCNKWZpszREytrKZi4Ij1WspCHe6a5qFnSWMtEKfgFU8Oyf/B0eiotXsy2yndApCiAtqT5EnJPcxrmpT9Zj5KiwM/bKh413VAAAAAZMCYWCpPsr0akPsEhIcDqceciWILEG4Sf2V7tqMiUOvxjjRIw7f3LAeAoxdEhTcp95C7h2FumKOMxY920E2BFA==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -673,10 +673,10 @@
                 <SSIS:Property SSIS:Name="Name">Package1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">34</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">56</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{58800264-7CF6-430F-BA9F-F1AAEC1C3CAE}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{6BA3A950-9C43-4E20-B90C-3B0272AF27B8}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -987,10 +987,10 @@
                 <SSIS:Property SSIS:Name="Name">Package1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">26</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">40</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{94BDBCC8-A7E5-4408-9D8F-8DE0470DE80B}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{BBEE2578-298F-45FC-96D1-D430D2F40F59}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -1301,7 +1301,28 @@
     </Manifest>
   </DeploymentModelSpecificContent>
   <ControlFlowParts />
-  <Miscellaneous />
+  <Miscellaneous>
+    <ProjectItem>
+      <Name>ANALISIS_INSCRIPCIONES_PROBLEMAS_SOLUCION.md</Name>
+      <FullPath>ANALISIS_INSCRIPCIONES_PROBLEMAS_SOLUCION.md</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Plan_Implementacion_FactInscripciones.md</Name>
+      <FullPath>Plan_Implementacion_FactInscripciones.md</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>README_FACTINSCRIPCIONES_FIX.md</Name>
+      <FullPath>README_FACTINSCRIPCIONES_FIX.md</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Validacion_FactInscripciones.sql</Name>
+      <FullPath>Validacion_FactInscripciones.sql</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>VISUALIZACION_PROBLEMA_SOLUCION.md</Name>
+      <FullPath>VISUALIZACION_PROBLEMA_SOLUCION.md</FullPath>
+    </ProjectItem>
+  </Miscellaneous>
   <Configurations>
     <Configuration>
       <Name>Development</Name>

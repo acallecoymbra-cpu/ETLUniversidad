@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="37"
-  DTS:VersionGUID="{4D660F7F-1206-41B0-A64C-F7BAD3B960E8}">
+  DTS:VersionBuild="43"
+  DTS:VersionGUID="{B13503F2-A9CE-41B6-8452-E784ABFB54A9}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -319,7 +319,7 @@
                 <property
                   dataType="System.String"
                   description="The mappings between the parameters in the SQL command and variables."
-                  name="ParameterMapping">"@end:Input",{54AA4D13-AAF8-45B7-9414-9B6EFE75EA8D};"@start:Input",{89EAAD31-4A4A-4912-BC20-566469BCF98D};</property>
+                  name="ParameterMapping">"@start:Input",{89EAAD31-4A4A-4912-BC20-566469BCF98D};"@end:Input",{54AA4D13-AAF8-45B7-9414-9B6EFE75EA8D};</property>
               </properties>
               <connections>
                 <connection
@@ -1299,7 +1299,7 @@ where [refTable].[MateriaKey] = ?</property>
           SQLTask:SqlStatementSource="EXECUTE [dbo].[GetLastPackageRowVersion] @tableName='Inscripcion'"
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
-            SQLTask:ResultName="LastRowValue"
+            SQLTask:ResultName="LastRowVersion"
             SQLTask:DtsVariableName="User::LastRowValue" />
         </SQLTask:SqlTaskData>
       </DTS:ObjectData>
@@ -1335,7 +1335,7 @@ where [refTable].[MateriaKey] = ?</property>
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{ABD14CF3-600C-4779-8B96-5B4ECB0C60E1}"
-          SQLTask:SqlStatementSource="EXECUTE [dbo].[DW_MergeFactInscripciones];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          SQLTask:SqlStatementSource="EXECUTE [dbo].[UpdateLastPackageRowVersion] @tableName='Inscripcion',@lastRowVersion=?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="0"
             SQLTask:DtsVariableName="User::DBTSValue"
@@ -1401,6 +1401,14 @@ where [refTable].[MateriaKey] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="196,42"
+          Id="Package\Add News Inscripciones"
+          TopLeft="502,249" />
+        <NodeLayout
+          Size="182,42"
+          Id="Package\Eliminar filas Staging"
+          TopLeft="302,246" />
+        <NodeLayout
           Size="206,42"
           Id="Package\Get DatabaseRowVersion"
           TopLeft="281,84" />
@@ -1408,6 +1416,14 @@ where [refTable].[MateriaKey] = ?</property>
           Size="193,42"
           Id="Package\Get OrdersRowVersion"
           TopLeft="281,168" />
+        <NodeLayout
+          Size="197,42"
+          Id="Package\Sync Inscripciones Data"
+          TopLeft="292,336" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Update Last Row"
+          TopLeft="304,421" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="380.75,126">
@@ -1430,10 +1446,6 @@ where [refTable].[MateriaKey] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="182,42"
-          Id="Package\Eliminar filas Staging"
-          TopLeft="302,246" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
           TopLeft="377.5,210">
@@ -1468,10 +1480,6 @@ where [refTable].[MateriaKey] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="196,42"
-          Id="Package\Add News Inscripciones"
-          TopLeft="502,249" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
           TopLeft="422,246">
@@ -1506,10 +1514,6 @@ where [refTable].[MateriaKey] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="197,42"
-          Id="Package\Sync Inscripciones Data"
-          TopLeft="292,336" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
           TopLeft="600,291">
@@ -1544,10 +1548,6 @@ where [refTable].[MateriaKey] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="163,42"
-          Id="Package\Update Last Row"
-          TopLeft="304,421" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
           TopLeft="388,378">
@@ -1579,9 +1579,13 @@ where [refTable].[MateriaKey] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="169,42"
-          Id="Package\Add News Inscripciones\Get Row Changes"
-          TopLeft="397,38" />
+          Size="170,42"
+          Id="Package\Add News Inscripciones\Lookup Estudiante"
+          TopLeft="404,264" />
+        <NodeLayout
+          Size="149,42"
+          Id="Package\Add News Inscripciones\LOAD Staging"
+          TopLeft="235,344" />
         <NodeLayout
           Size="159,42"
           Id="Package\Add News Inscripciones\Lookup Docente"
@@ -1591,9 +1595,13 @@ where [refTable].[MateriaKey] = ?</property>
           Id="Package\Add News Inscripciones\Lookup Materia"
           TopLeft="411,186" />
         <NodeLayout
-          Size="170,42"
-          Id="Package\Add News Inscripciones\Lookup Estudiante"
-          TopLeft="404,264" />
+          Size="196,42"
+          Id="Package\Add News Inscripciones\Add News Inscripciones"
+          TopLeft="497,361" />
+        <NodeLayout
+          Size="169,42"
+          Id="Package\Add News Inscripciones\Get Row Changes"
+          TopLeft="397,38" />
         <EdgeLayout
           Id="Package\Add News Inscripciones.Paths[OLE DB Source Output]"
           TopLeft="481.5,80">
@@ -1626,98 +1634,6 @@ where [refTable].[MateriaKey] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Add News Inscripciones.Paths[Lookup Match Output]"
-          TopLeft="490.5,159">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,27"
-              Start="0,0"
-              End="0,19.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,19.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,3.9453125,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Add News Inscripciones.Paths[Lookup Match Output1]"
-          TopLeft="488.75,228">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,36"
-              Start="0,0"
-              End="0,28.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,8.4453125,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="149,42"
-          Id="Package\Add News Inscripciones\LOAD Staging"
-          TopLeft="235,344" />
-        <NodeLayout
-          Size="196,42"
-          Id="Package\Add News Inscripciones\Add News Inscripciones"
-          TopLeft="497,361" />
-        <EdgeLayout
-          Id="Package\Add News Inscripciones.Paths[Lookup Match Output2]"
-          TopLeft="462,306">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-152.5,38"
-              Start="0,0"
-              End="-152.5,30.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,11.4125874125874" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,11.4125874125874"
-                    Point2="0,15.4125874125874"
-                    Point3="-4,15.4125874125874" />
-                  <mssgle:LineSegment
-                    End="-148.5,15.4125874125874" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-148.5,15.4125874125874"
-                    Point2="-152.5,15.4125874125874"
-                    Point3="-152.5,19.4125874125874" />
-                  <mssgle:LineSegment
-                    End="-152.5,30.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-124.44138671875,20.4125874125874,96.3827734375,11.609375"
-              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1756,70 +1672,100 @@ where [refTable].[MateriaKey] = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Add News Inscripciones.Paths[Lookup Match Output2]"
+          TopLeft="462,306">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-152.5,38"
+              Start="0,0"
+              End="-152.5,30.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11.4125874125874" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.4125874125874"
+                    Point2="0,15.4125874125874"
+                    Point3="-4,15.4125874125874" />
+                  <mssgle:LineSegment
+                    End="-148.5,15.4125874125874" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-148.5,15.4125874125874"
+                    Point2="-152.5,15.4125874125874"
+                    Point3="-152.5,19.4125874125874" />
+                  <mssgle:LineSegment
+                    End="-152.5,30.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-124.44138671875,20.4125874125874,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Add News Inscripciones.Paths[Lookup Match Output1]"
+          TopLeft="488.75,228">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36"
+              Start="0,0"
+              End="0,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,8.4453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Add News Inscripciones.Paths[Lookup Match Output]"
+          TopLeft="490.5,159">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,27"
+              Start="0,0"
+              End="0,19.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,3.9453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Add News Inscripciones\Get Row Changes">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Add News Inscripciones\Lookup Docente">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimDocente]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Add News Inscripciones\Lookup Materia">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimMateria]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Add News Inscripciones\Lookup Estudiante">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -1829,7 +1775,7 @@ where [refTable].[MateriaKey] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -1850,6 +1796,52 @@ where [refTable].[MateriaKey] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
+    design-time-name="Package\Add News Inscripciones\Lookup Docente">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimDocente]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Add News Inscripciones\Lookup Materia">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimMateria]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Add News Inscripciones\Add News Inscripciones">
     <Properties>
       <Property>
@@ -1859,6 +1851,14 @@ where [refTable].[MateriaKey] = ?</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Add News Inscripciones\Get Row Changes">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
