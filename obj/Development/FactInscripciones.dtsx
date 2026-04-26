@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="14"
-  DTS:VersionGUID="{7FB6BB56-6C9C-445A-AFC7-5B03F0E4C5FB}">
+  DTS:VersionBuild="37"
+  DTS:VersionGUID="{4D660F7F-1206-41B0-A64C-F7BAD3B960E8}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -49,7 +49,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="DBTSValue">
       <DTS:VariableValue
-        DTS:DataType="3">0</DTS:VariableValue>
+        DTS:DataType="20">0</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -58,18 +58,18 @@
       DTS:Namespace="User"
       DTS:ObjectName="LastRowValue">
       <DTS:VariableValue
-        DTS:DataType="3">0</DTS:VariableValue>
+        DTS:DataType="20">0</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Data Flow Task"
+      DTS:refId="Package\Add News Inscripciones"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
       DTS:DTSID="{197363F3-F6C5-4604-AF98-D6DFCA236A10}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Data Flow Task"
+      DTS:ObjectName="Add News Inscripciones"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -77,7 +77,204 @@
           version="1">
           <components>
             <component
-              refId="Package\Data Flow Task\Get Row Changes"
+              refId="Package\Add News Inscripciones\Add News Inscripciones"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Add News Inscripciones"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[FactInscripciones]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Add News Inscripciones\Add News Inscripciones.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[UniversidadDWDestino]"
+                  connectionManagerRefId="Package.ConnectionManagers[UniversidadDWDestino]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Add News Inscripciones\Add News Inscripciones.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Add News Inscripciones\Add News Inscripciones.Inputs[OLE DB Destination Input].Columns[InscripcionID]"
+                      cachedDataType="i4"
+                      cachedName="InscripcionID"
+                      externalMetadataColumnId="Package\Add News Inscripciones\Add News Inscripciones.Inputs[OLE DB Destination Input].ExternalColumns[InscripcionID]"
+                      lineageId="Package\Add News Inscripciones\Get Row Changes.Outputs[OLE DB Source Output].Columns[InscripcionID]" />
+                    <inputColumn
+                      refId="Package\Add News Inscripciones\Add News Inscripciones.Inputs[OLE DB Destination Input].Columns[PeriodoNombre]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="51"
+                      cachedName="PeriodoNombre"
+                      externalMetadataColumnId="Package\Add News Inscripciones\Add News Inscripciones.Inputs[OLE DB Destination Input].ExternalColumns[PeriodoNombre]"
+                      lineageId="Package\Add News Inscripciones\Get Row Changes.Outputs[OLE DB Source Output].Columns[PeriodoNombre]" />
+                    <inputColumn
+                      refId="Package\Add News Inscripciones\Add News Inscripciones.Inputs[OLE DB Destination Input].Columns[AulaNombre]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="41"
+                      cachedName="AulaNombre"
+                      externalMetadataColumnId="Package\Add News Inscripciones\Add News Inscripciones.Inputs[OLE DB Destination Input].ExternalColumns[AulaNombre]"
+                      lineageId="Package\Add News Inscripciones\Get Row Changes.Outputs[OLE DB Source Output].Columns[AulaNombre]" />
+                    <inputColumn
+                      refId="Package\Add News Inscripciones\Add News Inscripciones.Inputs[OLE DB Destination Input].Columns[Turno]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="Turno"
+                      externalMetadataColumnId="Package\Add News Inscripciones\Add News Inscripciones.Inputs[OLE DB Destination Input].ExternalColumns[Turno]"
+                      lineageId="Package\Add News Inscripciones\Get Row Changes.Outputs[OLE DB Source Output].Columns[Turno]" />
+                    <inputColumn
+                      refId="Package\Add News Inscripciones\Add News Inscripciones.Inputs[OLE DB Destination Input].Columns[NotaFinal]"
+                      cachedDataType="numeric"
+                      cachedName="NotaFinal"
+                      cachedPrecision="5"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Add News Inscripciones\Add News Inscripciones.Inputs[OLE DB Destination Input].ExternalColumns[NotaFinal]"
+                      lineageId="Package\Add News Inscripciones\Get Row Changes.Outputs[OLE DB Source Output].Columns[NotaFinal]" />
+                    <inputColumn
+                      refId="Package\Add News Inscripciones\Add News Inscripciones.Inputs[OLE DB Destination Input].Columns[DocenteKey]"
+                      cachedDataType="i4"
+                      cachedName="DocenteKey"
+                      externalMetadataColumnId="Package\Add News Inscripciones\Add News Inscripciones.Inputs[OLE DB Destination Input].ExternalColumns[DocenteKey]"
+                      lineageId="Package\Add News Inscripciones\Lookup Docente.Outputs[Lookup Match Output].Columns[DocenteKey]" />
+                    <inputColumn
+                      refId="Package\Add News Inscripciones\Add News Inscripciones.Inputs[OLE DB Destination Input].Columns[MateriaKey]"
+                      cachedDataType="i4"
+                      cachedName="MateriaKey"
+                      externalMetadataColumnId="Package\Add News Inscripciones\Add News Inscripciones.Inputs[OLE DB Destination Input].ExternalColumns[MateriaKey]"
+                      lineageId="Package\Add News Inscripciones\Lookup Materia.Outputs[Lookup Match Output].Columns[MateriaKey]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Add News Inscripciones\Add News Inscripciones.Inputs[OLE DB Destination Input].ExternalColumns[InscripcionID]"
+                      dataType="i4"
+                      name="InscripcionID" />
+                    <externalMetadataColumn
+                      refId="Package\Add News Inscripciones\Add News Inscripciones.Inputs[OLE DB Destination Input].ExternalColumns[EstudianteKey]"
+                      dataType="i4"
+                      name="EstudianteKey" />
+                    <externalMetadataColumn
+                      refId="Package\Add News Inscripciones\Add News Inscripciones.Inputs[OLE DB Destination Input].ExternalColumns[DocenteKey]"
+                      dataType="i4"
+                      name="DocenteKey" />
+                    <externalMetadataColumn
+                      refId="Package\Add News Inscripciones\Add News Inscripciones.Inputs[OLE DB Destination Input].ExternalColumns[MateriaKey]"
+                      dataType="i4"
+                      name="MateriaKey" />
+                    <externalMetadataColumn
+                      refId="Package\Add News Inscripciones\Add News Inscripciones.Inputs[OLE DB Destination Input].ExternalColumns[PeriodoNombre]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PeriodoNombre" />
+                    <externalMetadataColumn
+                      refId="Package\Add News Inscripciones\Add News Inscripciones.Inputs[OLE DB Destination Input].ExternalColumns[AulaNombre]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="AulaNombre" />
+                    <externalMetadataColumn
+                      refId="Package\Add News Inscripciones\Add News Inscripciones.Inputs[OLE DB Destination Input].ExternalColumns[Turno]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Turno" />
+                    <externalMetadataColumn
+                      refId="Package\Add News Inscripciones\Add News Inscripciones.Inputs[OLE DB Destination Input].ExternalColumns[NotaFinal]"
+                      dataType="numeric"
+                      name="NotaFinal"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Add News Inscripciones\Add News Inscripciones.Inputs[OLE DB Destination Input].ExternalColumns[RowVersion]"
+                      dataType="i8"
+                      name="RowVersion" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Add News Inscripciones\Add News Inscripciones.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Add News Inscripciones\Add News Inscripciones.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Add News Inscripciones\Add News Inscripciones.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Add News Inscripciones\Add News Inscripciones.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Add News Inscripciones\Add News Inscripciones.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Add News Inscripciones\Add News Inscripciones.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Add News Inscripciones\Get Row Changes"
               componentClassID="Microsoft.OLEDBSource"
               contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
               description="OLE DB Source"
@@ -126,7 +323,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Task\Get Row Changes.Connections[OleDbConnection]"
+                  refId="Package\Add News Inscripciones\Get Row Changes.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[UniversidadOLTPOrigen]"
                   connectionManagerRefId="Package.ConnectionManagers[UniversidadOLTPOrigen]"
                   description="The OLE DB runtime connection used to access the database."
@@ -134,85 +331,85 @@
               </connections>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\Get Row Changes.Outputs[OLE DB Source Output]"
+                  refId="Package\Add News Inscripciones\Get Row Changes.Outputs[OLE DB Source Output]"
                   name="OLE DB Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\Get Row Changes.Outputs[OLE DB Source Output].Columns[InscripcionID]"
+                      refId="Package\Add News Inscripciones\Get Row Changes.Outputs[OLE DB Source Output].Columns[InscripcionID]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Get Row Changes.Outputs[OLE DB Source Output].ExternalColumns[InscripcionID]"
-                      lineageId="Package\Data Flow Task\Get Row Changes.Outputs[OLE DB Source Output].Columns[InscripcionID]"
+                      externalMetadataColumnId="Package\Add News Inscripciones\Get Row Changes.Outputs[OLE DB Source Output].ExternalColumns[InscripcionID]"
+                      lineageId="Package\Add News Inscripciones\Get Row Changes.Outputs[OLE DB Source Output].Columns[InscripcionID]"
                       name="InscripcionID"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Get Row Changes.Outputs[OLE DB Source Output].Columns[estudiante_id]"
+                      refId="Package\Add News Inscripciones\Get Row Changes.Outputs[OLE DB Source Output].Columns[estudiante_id]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Get Row Changes.Outputs[OLE DB Source Output].ExternalColumns[estudiante_id]"
-                      lineageId="Package\Data Flow Task\Get Row Changes.Outputs[OLE DB Source Output].Columns[estudiante_id]"
+                      externalMetadataColumnId="Package\Add News Inscripciones\Get Row Changes.Outputs[OLE DB Source Output].ExternalColumns[estudiante_id]"
+                      lineageId="Package\Add News Inscripciones\Get Row Changes.Outputs[OLE DB Source Output].Columns[estudiante_id]"
                       name="estudiante_id"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Get Row Changes.Outputs[OLE DB Source Output].Columns[docente_id]"
+                      refId="Package\Add News Inscripciones\Get Row Changes.Outputs[OLE DB Source Output].Columns[docente_id]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Get Row Changes.Outputs[OLE DB Source Output].ExternalColumns[docente_id]"
-                      lineageId="Package\Data Flow Task\Get Row Changes.Outputs[OLE DB Source Output].Columns[docente_id]"
+                      externalMetadataColumnId="Package\Add News Inscripciones\Get Row Changes.Outputs[OLE DB Source Output].ExternalColumns[docente_id]"
+                      lineageId="Package\Add News Inscripciones\Get Row Changes.Outputs[OLE DB Source Output].Columns[docente_id]"
                       name="docente_id"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Get Row Changes.Outputs[OLE DB Source Output].Columns[materia_id]"
+                      refId="Package\Add News Inscripciones\Get Row Changes.Outputs[OLE DB Source Output].Columns[materia_id]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Get Row Changes.Outputs[OLE DB Source Output].ExternalColumns[materia_id]"
-                      lineageId="Package\Data Flow Task\Get Row Changes.Outputs[OLE DB Source Output].Columns[materia_id]"
+                      externalMetadataColumnId="Package\Add News Inscripciones\Get Row Changes.Outputs[OLE DB Source Output].ExternalColumns[materia_id]"
+                      lineageId="Package\Add News Inscripciones\Get Row Changes.Outputs[OLE DB Source Output].Columns[materia_id]"
                       name="materia_id"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Get Row Changes.Outputs[OLE DB Source Output].Columns[PeriodoNombre]"
+                      refId="Package\Add News Inscripciones\Get Row Changes.Outputs[OLE DB Source Output].Columns[PeriodoNombre]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Get Row Changes.Outputs[OLE DB Source Output].ExternalColumns[PeriodoNombre]"
+                      externalMetadataColumnId="Package\Add News Inscripciones\Get Row Changes.Outputs[OLE DB Source Output].ExternalColumns[PeriodoNombre]"
                       length="51"
-                      lineageId="Package\Data Flow Task\Get Row Changes.Outputs[OLE DB Source Output].Columns[PeriodoNombre]"
+                      lineageId="Package\Add News Inscripciones\Get Row Changes.Outputs[OLE DB Source Output].Columns[PeriodoNombre]"
                       name="PeriodoNombre"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Get Row Changes.Outputs[OLE DB Source Output].Columns[AulaNombre]"
+                      refId="Package\Add News Inscripciones\Get Row Changes.Outputs[OLE DB Source Output].Columns[AulaNombre]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Get Row Changes.Outputs[OLE DB Source Output].ExternalColumns[AulaNombre]"
+                      externalMetadataColumnId="Package\Add News Inscripciones\Get Row Changes.Outputs[OLE DB Source Output].ExternalColumns[AulaNombre]"
                       length="41"
-                      lineageId="Package\Data Flow Task\Get Row Changes.Outputs[OLE DB Source Output].Columns[AulaNombre]"
+                      lineageId="Package\Add News Inscripciones\Get Row Changes.Outputs[OLE DB Source Output].Columns[AulaNombre]"
                       name="AulaNombre"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Get Row Changes.Outputs[OLE DB Source Output].Columns[Turno]"
+                      refId="Package\Add News Inscripciones\Get Row Changes.Outputs[OLE DB Source Output].Columns[Turno]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Get Row Changes.Outputs[OLE DB Source Output].ExternalColumns[Turno]"
+                      externalMetadataColumnId="Package\Add News Inscripciones\Get Row Changes.Outputs[OLE DB Source Output].ExternalColumns[Turno]"
                       length="20"
-                      lineageId="Package\Data Flow Task\Get Row Changes.Outputs[OLE DB Source Output].Columns[Turno]"
+                      lineageId="Package\Add News Inscripciones\Get Row Changes.Outputs[OLE DB Source Output].Columns[Turno]"
                       name="Turno"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Get Row Changes.Outputs[OLE DB Source Output].Columns[NotaFinal]"
+                      refId="Package\Add News Inscripciones\Get Row Changes.Outputs[OLE DB Source Output].Columns[NotaFinal]"
                       dataType="numeric"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Get Row Changes.Outputs[OLE DB Source Output].ExternalColumns[NotaFinal]"
-                      lineageId="Package\Data Flow Task\Get Row Changes.Outputs[OLE DB Source Output].Columns[NotaFinal]"
+                      externalMetadataColumnId="Package\Add News Inscripciones\Get Row Changes.Outputs[OLE DB Source Output].ExternalColumns[NotaFinal]"
+                      lineageId="Package\Add News Inscripciones\Get Row Changes.Outputs[OLE DB Source Output].Columns[NotaFinal]"
                       name="NotaFinal"
                       precision="5"
                       scale="2"
@@ -221,41 +418,41 @@
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Get Row Changes.Outputs[OLE DB Source Output].ExternalColumns[InscripcionID]"
+                      refId="Package\Add News Inscripciones\Get Row Changes.Outputs[OLE DB Source Output].ExternalColumns[InscripcionID]"
                       dataType="i4"
                       name="InscripcionID" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Get Row Changes.Outputs[OLE DB Source Output].ExternalColumns[estudiante_id]"
+                      refId="Package\Add News Inscripciones\Get Row Changes.Outputs[OLE DB Source Output].ExternalColumns[estudiante_id]"
                       dataType="i4"
                       name="estudiante_id" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Get Row Changes.Outputs[OLE DB Source Output].ExternalColumns[docente_id]"
+                      refId="Package\Add News Inscripciones\Get Row Changes.Outputs[OLE DB Source Output].ExternalColumns[docente_id]"
                       dataType="i4"
                       name="docente_id" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Get Row Changes.Outputs[OLE DB Source Output].ExternalColumns[materia_id]"
+                      refId="Package\Add News Inscripciones\Get Row Changes.Outputs[OLE DB Source Output].ExternalColumns[materia_id]"
                       dataType="i4"
                       name="materia_id" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Get Row Changes.Outputs[OLE DB Source Output].ExternalColumns[PeriodoNombre]"
+                      refId="Package\Add News Inscripciones\Get Row Changes.Outputs[OLE DB Source Output].ExternalColumns[PeriodoNombre]"
                       codePage="1252"
                       dataType="str"
                       length="51"
                       name="PeriodoNombre" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Get Row Changes.Outputs[OLE DB Source Output].ExternalColumns[AulaNombre]"
+                      refId="Package\Add News Inscripciones\Get Row Changes.Outputs[OLE DB Source Output].ExternalColumns[AulaNombre]"
                       codePage="1252"
                       dataType="str"
                       length="41"
                       name="AulaNombre" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Get Row Changes.Outputs[OLE DB Source Output].ExternalColumns[Turno]"
+                      refId="Package\Add News Inscripciones\Get Row Changes.Outputs[OLE DB Source Output].ExternalColumns[Turno]"
                       codePage="1252"
                       dataType="str"
                       length="20"
                       name="Turno" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Get Row Changes.Outputs[OLE DB Source Output].ExternalColumns[NotaFinal]"
+                      refId="Package\Add News Inscripciones\Get Row Changes.Outputs[OLE DB Source Output].ExternalColumns[NotaFinal]"
                       dataType="numeric"
                       name="NotaFinal"
                       precision="5"
@@ -263,68 +460,741 @@
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Data Flow Task\Get Row Changes.Outputs[OLE DB Source Error Output]"
+                  refId="Package\Add News Inscripciones\Get Row Changes.Outputs[OLE DB Source Error Output]"
                   isErrorOut="true"
                   name="OLE DB Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\Get Row Changes.Outputs[OLE DB Source Error Output].Columns[InscripcionID]"
+                      refId="Package\Add News Inscripciones\Get Row Changes.Outputs[OLE DB Source Error Output].Columns[InscripcionID]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\Get Row Changes.Outputs[OLE DB Source Error Output].Columns[InscripcionID]"
+                      lineageId="Package\Add News Inscripciones\Get Row Changes.Outputs[OLE DB Source Error Output].Columns[InscripcionID]"
                       name="InscripcionID" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Get Row Changes.Outputs[OLE DB Source Error Output].Columns[estudiante_id]"
+                      refId="Package\Add News Inscripciones\Get Row Changes.Outputs[OLE DB Source Error Output].Columns[estudiante_id]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\Get Row Changes.Outputs[OLE DB Source Error Output].Columns[estudiante_id]"
+                      lineageId="Package\Add News Inscripciones\Get Row Changes.Outputs[OLE DB Source Error Output].Columns[estudiante_id]"
                       name="estudiante_id" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Get Row Changes.Outputs[OLE DB Source Error Output].Columns[docente_id]"
+                      refId="Package\Add News Inscripciones\Get Row Changes.Outputs[OLE DB Source Error Output].Columns[docente_id]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\Get Row Changes.Outputs[OLE DB Source Error Output].Columns[docente_id]"
+                      lineageId="Package\Add News Inscripciones\Get Row Changes.Outputs[OLE DB Source Error Output].Columns[docente_id]"
                       name="docente_id" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Get Row Changes.Outputs[OLE DB Source Error Output].Columns[materia_id]"
+                      refId="Package\Add News Inscripciones\Get Row Changes.Outputs[OLE DB Source Error Output].Columns[materia_id]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\Get Row Changes.Outputs[OLE DB Source Error Output].Columns[materia_id]"
+                      lineageId="Package\Add News Inscripciones\Get Row Changes.Outputs[OLE DB Source Error Output].Columns[materia_id]"
                       name="materia_id" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Get Row Changes.Outputs[OLE DB Source Error Output].Columns[PeriodoNombre]"
+                      refId="Package\Add News Inscripciones\Get Row Changes.Outputs[OLE DB Source Error Output].Columns[PeriodoNombre]"
                       codePage="1252"
                       dataType="str"
                       length="51"
-                      lineageId="Package\Data Flow Task\Get Row Changes.Outputs[OLE DB Source Error Output].Columns[PeriodoNombre]"
+                      lineageId="Package\Add News Inscripciones\Get Row Changes.Outputs[OLE DB Source Error Output].Columns[PeriodoNombre]"
                       name="PeriodoNombre" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Get Row Changes.Outputs[OLE DB Source Error Output].Columns[AulaNombre]"
+                      refId="Package\Add News Inscripciones\Get Row Changes.Outputs[OLE DB Source Error Output].Columns[AulaNombre]"
                       codePage="1252"
                       dataType="str"
                       length="41"
-                      lineageId="Package\Data Flow Task\Get Row Changes.Outputs[OLE DB Source Error Output].Columns[AulaNombre]"
+                      lineageId="Package\Add News Inscripciones\Get Row Changes.Outputs[OLE DB Source Error Output].Columns[AulaNombre]"
                       name="AulaNombre" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Get Row Changes.Outputs[OLE DB Source Error Output].Columns[Turno]"
+                      refId="Package\Add News Inscripciones\Get Row Changes.Outputs[OLE DB Source Error Output].Columns[Turno]"
                       codePage="1252"
                       dataType="str"
                       length="20"
-                      lineageId="Package\Data Flow Task\Get Row Changes.Outputs[OLE DB Source Error Output].Columns[Turno]"
+                      lineageId="Package\Add News Inscripciones\Get Row Changes.Outputs[OLE DB Source Error Output].Columns[Turno]"
                       name="Turno" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Get Row Changes.Outputs[OLE DB Source Error Output].Columns[NotaFinal]"
+                      refId="Package\Add News Inscripciones\Get Row Changes.Outputs[OLE DB Source Error Output].Columns[NotaFinal]"
                       dataType="numeric"
-                      lineageId="Package\Data Flow Task\Get Row Changes.Outputs[OLE DB Source Error Output].Columns[NotaFinal]"
+                      lineageId="Package\Add News Inscripciones\Get Row Changes.Outputs[OLE DB Source Error Output].Columns[NotaFinal]"
                       name="NotaFinal"
                       precision="5"
                       scale="2" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Get Row Changes.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Add News Inscripciones\Get Row Changes.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\Get Row Changes.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Add News Inscripciones\Get Row Changes.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Get Row Changes.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Add News Inscripciones\Get Row Changes.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\Get Row Changes.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Add News Inscripciones\Get Row Changes.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Add News Inscripciones\LOAD Staging"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="LOAD Staging"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[staging].[inscripcion]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Add News Inscripciones\LOAD Staging.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[UniversidadDWDestino]"
+                  connectionManagerRefId="Package.ConnectionManagers[UniversidadDWDestino]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Add News Inscripciones\LOAD Staging.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Add News Inscripciones\LOAD Staging.Inputs[OLE DB Destination Input].Columns[InscripcionID]"
+                      cachedDataType="i4"
+                      cachedName="InscripcionID"
+                      externalMetadataColumnId="Package\Add News Inscripciones\LOAD Staging.Inputs[OLE DB Destination Input].ExternalColumns[InscripcionID]"
+                      lineageId="Package\Add News Inscripciones\Get Row Changes.Outputs[OLE DB Source Output].Columns[InscripcionID]" />
+                    <inputColumn
+                      refId="Package\Add News Inscripciones\LOAD Staging.Inputs[OLE DB Destination Input].Columns[PeriodoNombre]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="51"
+                      cachedName="PeriodoNombre"
+                      externalMetadataColumnId="Package\Add News Inscripciones\LOAD Staging.Inputs[OLE DB Destination Input].ExternalColumns[PeriodoNombre]"
+                      lineageId="Package\Add News Inscripciones\Get Row Changes.Outputs[OLE DB Source Output].Columns[PeriodoNombre]" />
+                    <inputColumn
+                      refId="Package\Add News Inscripciones\LOAD Staging.Inputs[OLE DB Destination Input].Columns[AulaNombre]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="41"
+                      cachedName="AulaNombre"
+                      externalMetadataColumnId="Package\Add News Inscripciones\LOAD Staging.Inputs[OLE DB Destination Input].ExternalColumns[AulaNombre]"
+                      lineageId="Package\Add News Inscripciones\Get Row Changes.Outputs[OLE DB Source Output].Columns[AulaNombre]" />
+                    <inputColumn
+                      refId="Package\Add News Inscripciones\LOAD Staging.Inputs[OLE DB Destination Input].Columns[Turno]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="Turno"
+                      externalMetadataColumnId="Package\Add News Inscripciones\LOAD Staging.Inputs[OLE DB Destination Input].ExternalColumns[Turno]"
+                      lineageId="Package\Add News Inscripciones\Get Row Changes.Outputs[OLE DB Source Output].Columns[Turno]" />
+                    <inputColumn
+                      refId="Package\Add News Inscripciones\LOAD Staging.Inputs[OLE DB Destination Input].Columns[NotaFinal]"
+                      cachedDataType="numeric"
+                      cachedName="NotaFinal"
+                      cachedPrecision="5"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Add News Inscripciones\LOAD Staging.Inputs[OLE DB Destination Input].ExternalColumns[NotaFinal]"
+                      lineageId="Package\Add News Inscripciones\Get Row Changes.Outputs[OLE DB Source Output].Columns[NotaFinal]" />
+                    <inputColumn
+                      refId="Package\Add News Inscripciones\LOAD Staging.Inputs[OLE DB Destination Input].Columns[DocenteKey]"
+                      cachedDataType="i4"
+                      cachedName="DocenteKey"
+                      externalMetadataColumnId="Package\Add News Inscripciones\LOAD Staging.Inputs[OLE DB Destination Input].ExternalColumns[DocenteKey]"
+                      lineageId="Package\Add News Inscripciones\Lookup Docente.Outputs[Lookup Match Output].Columns[DocenteKey]" />
+                    <inputColumn
+                      refId="Package\Add News Inscripciones\LOAD Staging.Inputs[OLE DB Destination Input].Columns[MateriaKey]"
+                      cachedDataType="i4"
+                      cachedName="MateriaKey"
+                      externalMetadataColumnId="Package\Add News Inscripciones\LOAD Staging.Inputs[OLE DB Destination Input].ExternalColumns[MateriaKey]"
+                      lineageId="Package\Add News Inscripciones\Lookup Materia.Outputs[Lookup Match Output].Columns[MateriaKey]" />
+                    <inputColumn
+                      refId="Package\Add News Inscripciones\LOAD Staging.Inputs[OLE DB Destination Input].Columns[EstudianteKey]"
+                      cachedDataType="i4"
+                      cachedName="EstudianteKey"
+                      externalMetadataColumnId="Package\Add News Inscripciones\LOAD Staging.Inputs[OLE DB Destination Input].ExternalColumns[EstudianteKey]"
+                      lineageId="Package\Add News Inscripciones\Lookup Estudiante.Outputs[Lookup Match Output].Columns[EstudianteKey]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Add News Inscripciones\LOAD Staging.Inputs[OLE DB Destination Input].ExternalColumns[InscripcionID]"
+                      dataType="i4"
+                      name="InscripcionID" />
+                    <externalMetadataColumn
+                      refId="Package\Add News Inscripciones\LOAD Staging.Inputs[OLE DB Destination Input].ExternalColumns[EstudianteKey]"
+                      dataType="i4"
+                      name="EstudianteKey" />
+                    <externalMetadataColumn
+                      refId="Package\Add News Inscripciones\LOAD Staging.Inputs[OLE DB Destination Input].ExternalColumns[DocenteKey]"
+                      dataType="i4"
+                      name="DocenteKey" />
+                    <externalMetadataColumn
+                      refId="Package\Add News Inscripciones\LOAD Staging.Inputs[OLE DB Destination Input].ExternalColumns[MateriaKey]"
+                      dataType="i4"
+                      name="MateriaKey" />
+                    <externalMetadataColumn
+                      refId="Package\Add News Inscripciones\LOAD Staging.Inputs[OLE DB Destination Input].ExternalColumns[PeriodoNombre]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PeriodoNombre" />
+                    <externalMetadataColumn
+                      refId="Package\Add News Inscripciones\LOAD Staging.Inputs[OLE DB Destination Input].ExternalColumns[AulaNombre]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="AulaNombre" />
+                    <externalMetadataColumn
+                      refId="Package\Add News Inscripciones\LOAD Staging.Inputs[OLE DB Destination Input].ExternalColumns[Turno]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Turno" />
+                    <externalMetadataColumn
+                      refId="Package\Add News Inscripciones\LOAD Staging.Inputs[OLE DB Destination Input].ExternalColumns[NotaFinal]"
+                      dataType="numeric"
+                      name="NotaFinal"
+                      precision="5"
+                      scale="2" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Add News Inscripciones\LOAD Staging.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Add News Inscripciones\LOAD Staging.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Add News Inscripciones\LOAD Staging.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Add News Inscripciones\LOAD Staging.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Add News Inscripciones\LOAD Staging.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Add News Inscripciones\LOAD Staging.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Add News Inscripciones\Lookup Docente"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup Docente"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimDocente]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimDocente]) [refTable]
+where [refTable].[DocenteKey] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="DocenteKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DocenteID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="NombreCompleto" dataType="DT_STR" length="160" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Categoria" dataType="DT_STR" length="30" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Departamento" dataType="DT_STR" length="100" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="RowVersion" dataType="DT_I8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Add News Inscripciones\Get Row Changes.Outputs[OLE DB Source Output].Columns[docente_id]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Add News Inscripciones\Lookup Docente.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[UniversidadDWDestino]"
+                  connectionManagerRefId="Package.ConnectionManagers[UniversidadDWDestino]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Add News Inscripciones\Lookup Docente.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Add News Inscripciones\Lookup Docente.Inputs[Lookup Input].Columns[docente_id]"
+                      cachedDataType="i4"
+                      cachedName="docente_id"
+                      lineageId="Package\Add News Inscripciones\Get Row Changes.Outputs[OLE DB Source Output].Columns[docente_id]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">DocenteKey</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Add News Inscripciones\Lookup Docente.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Add News Inscripciones\Lookup Docente.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Add News Inscripciones\Lookup Docente.Outputs[Lookup Match Output].Columns[DocenteKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Add News Inscripciones\Lookup Docente.Outputs[Lookup Match Output].Columns[DocenteKey]"
+                      name="DocenteKey"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">DocenteKey</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Add News Inscripciones\Lookup Docente.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Add News Inscripciones\Lookup Docente.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Add News Inscripciones\Lookup Docente.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Add News Inscripciones\Lookup Docente.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Add News Inscripciones\Lookup Docente.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Add News Inscripciones\Lookup Docente.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Add News Inscripciones\Lookup Docente.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Add News Inscripciones\Lookup Docente.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Add News Inscripciones\Lookup Estudiante"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup Estudiante"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimEstudiante]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimEstudiante]) [refTable]
+where [refTable].[EstudianteKey] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="EstudianteKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="EstudianteID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="NombreCompleto" dataType="DT_STR" length="160" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Carrera" dataType="DT_STR" length="120" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="EstadoAcademico" dataType="DT_STR" length="20" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="RowVersion" dataType="DT_I8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Add News Inscripciones\Get Row Changes.Outputs[OLE DB Source Output].Columns[estudiante_id]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Add News Inscripciones\Lookup Estudiante.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[UniversidadDWDestino]"
+                  connectionManagerRefId="Package.ConnectionManagers[UniversidadDWDestino]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Add News Inscripciones\Lookup Estudiante.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Add News Inscripciones\Lookup Estudiante.Inputs[Lookup Input].Columns[estudiante_id]"
+                      cachedDataType="i4"
+                      cachedName="estudiante_id"
+                      lineageId="Package\Add News Inscripciones\Get Row Changes.Outputs[OLE DB Source Output].Columns[estudiante_id]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">EstudianteKey</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Add News Inscripciones\Lookup Estudiante.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Add News Inscripciones\Lookup Estudiante.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Add News Inscripciones\Lookup Estudiante.Outputs[Lookup Match Output].Columns[EstudianteKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Add News Inscripciones\Lookup Estudiante.Outputs[Lookup Match Output].Columns[EstudianteKey]"
+                      name="EstudianteKey"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">EstudianteKey</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Add News Inscripciones\Lookup Estudiante.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Add News Inscripciones\Lookup Estudiante.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Add News Inscripciones\Lookup Estudiante.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Add News Inscripciones\Lookup Estudiante.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Add News Inscripciones\Lookup Estudiante.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Add News Inscripciones\Lookup Estudiante.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Add News Inscripciones\Lookup Estudiante.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Add News Inscripciones\Lookup Estudiante.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Add News Inscripciones\Lookup Materia"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup Materia"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimMateria]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimMateria]) [refTable]
+where [refTable].[MateriaKey] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="MateriaKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MateriaID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="NombreMateria" dataType="DT_STR" length="120" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Creditos" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="RowVersion" dataType="DT_I8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Add News Inscripciones\Get Row Changes.Outputs[OLE DB Source Output].Columns[materia_id]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Add News Inscripciones\Lookup Materia.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[UniversidadDWDestino]"
+                  connectionManagerRefId="Package.ConnectionManagers[UniversidadDWDestino]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Add News Inscripciones\Lookup Materia.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Add News Inscripciones\Lookup Materia.Inputs[Lookup Input].Columns[materia_id]"
+                      cachedDataType="i4"
+                      cachedName="materia_id"
+                      lineageId="Package\Add News Inscripciones\Get Row Changes.Outputs[OLE DB Source Output].Columns[materia_id]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">MateriaKey</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Add News Inscripciones\Lookup Materia.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Add News Inscripciones\Lookup Materia.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Add News Inscripciones\Lookup Materia.Outputs[Lookup Match Output].Columns[MateriaKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Add News Inscripciones\Lookup Materia.Outputs[Lookup Match Output].Columns[MateriaKey]"
+                      name="MateriaKey"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">MateriaKey</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Add News Inscripciones\Lookup Materia.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Add News Inscripciones\Lookup Materia.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Add News Inscripciones\Lookup Materia.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Add News Inscripciones\Lookup Materia.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Add News Inscripciones\Lookup Materia.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Add News Inscripciones\Lookup Materia.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Add News Inscripciones\Lookup Materia.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Add News Inscripciones\Lookup Materia.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -333,17 +1203,61 @@
               </outputs>
             </component>
           </components>
+          <paths>
+            <path
+              refId="Package\Add News Inscripciones.Paths[Lookup Match Output]"
+              endId="Package\Add News Inscripciones\Lookup Materia.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Add News Inscripciones\Lookup Docente.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Add News Inscripciones.Paths[Lookup Match Output1]"
+              endId="Package\Add News Inscripciones\Lookup Estudiante.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Add News Inscripciones\Lookup Materia.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Add News Inscripciones.Paths[Lookup Match Output2]"
+              endId="Package\Add News Inscripciones\LOAD Staging.Inputs[OLE DB Destination Input]"
+              name="Lookup Match Output"
+              startId="Package\Add News Inscripciones\Lookup Estudiante.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Add News Inscripciones.Paths[Lookup No Match Output]"
+              endId="Package\Add News Inscripciones\Add News Inscripciones.Inputs[OLE DB Destination Input]"
+              name="Lookup No Match Output"
+              startId="Package\Add News Inscripciones\Lookup Estudiante.Outputs[Lookup No Match Output]" />
+            <path
+              refId="Package\Add News Inscripciones.Paths[OLE DB Source Output]"
+              endId="Package\Add News Inscripciones\Lookup Docente.Inputs[Lookup Input]"
+              name="OLE DB Source Output"
+              startId="Package\Add News Inscripciones\Get Row Changes.Outputs[OLE DB Source Output]" />
+          </paths>
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Execute SQL Task"
+      DTS:refId="Package\Eliminar filas Staging"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{B0554614-C39C-446F-AA2B-904BCA316755}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Eliminar filas Staging"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{ABD14CF3-600C-4779-8B96-5B4ECB0C60E1}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE [staging].[inscripcion];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Get DatabaseRowVersion"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
       DTS:DTSID="{D0EB2AA1-716C-4B60-920D-4CFC073DE0BC}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Execute SQL Task"
+      DTS:ObjectName="Get DatabaseRowVersion"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:ThreadHint="0">
       <DTS:Variables>
@@ -361,17 +1275,21 @@
         <SQLTask:SqlTaskData
           SQLTask:Connection="{D2FD342E-2E0E-4C42-B17F-96B48B33BCAE}"
           SQLTask:SqlStatementSource="EXECUTE [dbo].[GetDatabaseRowVersion] "
-          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="DBTS"
+            SQLTask:DtsVariableName="User::DBTSValue" />
+        </SQLTask:SqlTaskData>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Execute SQL Task 1"
+      DTS:refId="Package\Get OrdersRowVersion"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
       DTS:DTSID="{ACE57D4F-F5A0-48CF-B153-EA16470B4B3D}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Execute SQL Task 1"
+      DTS:ObjectName="Get OrdersRowVersion"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:ThreadHint="0">
       <DTS:Variables />
@@ -387,20 +1305,44 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Initialize Staging"
+      DTS:refId="Package\Sync Inscripciones Data"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{B0554614-C39C-446F-AA2B-904BCA316755}"
+      DTS:DTSID="{54B159BB-CC3F-4244-A2E4-8498C671B1CC}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Initialize Staging"
+      DTS:ObjectName="Sync Inscripciones Data"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{ABD14CF3-600C-4779-8B96-5B4ECB0C60E1}"
-          SQLTask:SqlStatementSource="TRUNCATE TABLE [staging].[inscripcion];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="EXECUTE [dbo].[DW_MergeFactInscripciones];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Update Last Row"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{CD1C11B6-0D20-4F02-9EB5-9E64CD9F069A}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Update Last Row"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{ABD14CF3-600C-4779-8B96-5B4ECB0C60E1}"
+          SQLTask:SqlStatementSource="EXECUTE [dbo].[DW_MergeFactInscripciones];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::DBTSValue"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -409,18 +1351,42 @@
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
       DTS:DTSID="{9C1768A1-F724-4E32-BB32-557D28624D05}"
-      DTS:From="Package\Execute SQL Task"
+      DTS:From="Package\Get DatabaseRowVersion"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
-      DTS:To="Package\Execute SQL Task 1" />
+      DTS:To="Package\Get OrdersRowVersion" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
       DTS:DTSID="{B4B1935F-B135-4B50-9262-A9E27CCB3ED6}"
-      DTS:From="Package\Execute SQL Task 1"
+      DTS:From="Package\Get OrdersRowVersion"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
-      DTS:To="Package\Initialize Staging" />
+      DTS:To="Package\Eliminar filas Staging" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{8F32103D-E345-48FB-BDB3-6EBDD721F23F}"
+      DTS:From="Package\Eliminar filas Staging"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Add News Inscripciones" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{F94BA7A8-05DB-4FC3-8ED4-48EB3A351B47}"
+      DTS:From="Package\Add News Inscripciones"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\Sync Inscripciones Data" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{9C3DC383-4A14-47F3-899D-966D38F8E852}"
+      DTS:From="Package\Sync Inscripciones Data"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\Update Last Row" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -433,41 +1399,29 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="170,42"
-          Id="Package\Execute SQL Task"
-          TopLeft="301,86" />
+          Size="206,42"
+          Id="Package\Get DatabaseRowVersion"
+          TopLeft="281,84" />
         <NodeLayout
-          Size="179,42"
-          Id="Package\Execute SQL Task 1"
-          TopLeft="368,185" />
+          Size="193,42"
+          Id="Package\Get OrdersRowVersion"
+          TopLeft="281,168" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="386,128">
+          TopLeft="380.75,126">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="71.5,57"
+              EndConnector="0,42"
               Start="0,0"
-              End="71.5,49.5">
+              End="0,34.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,24.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,24.5"
-                    Point2="0,28.5"
-                    Point3="4,28.5" />
-                  <mssgle:LineSegment
-                    End="67.5,28.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="67.5,28.5"
-                    Point2="71.5,28.5"
-                    Point3="71.5,32.5" />
-                  <mssgle:LineSegment
-                    End="71.5,49.5" />
+                    End="0,34.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -477,35 +1431,35 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="159,42"
-          Id="Package\Initialize Staging"
-          TopLeft="368,278" />
+          Size="182,42"
+          Id="Package\Eliminar filas Staging"
+          TopLeft="302,246" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="457.5,227">
+          TopLeft="377.5,210">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-10,51"
+              EndConnector="-13.5,36"
               Start="0,0"
-              End="-10,43.5">
+              End="-13.5,28.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,21.5" />
+                    End="0,17.4117647058824" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,21.5"
-                    Point2="0,25.5"
-                    Point3="-4,25.5" />
+                    Point1="0,17.4117647058824"
+                    Point2="0,21.4117647058824"
+                    Point3="-4,21.4117647058824" />
                   <mssgle:LineSegment
-                    End="-6,25.5" />
+                    End="-9.5,21.4117647058824" />
                   <mssgle:CubicBezierSegment
-                    Point1="-6,25.5"
-                    Point2="-10,25.5"
-                    Point3="-10,29.5" />
+                    Point1="-9.5,21.4117647058824"
+                    Point2="-13.5,21.4117647058824"
+                    Point3="-13.5,25.4117647058824" />
                   <mssgle:LineSegment
-                    End="-10,43.5" />
+                    End="-13.5,28.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -515,29 +1469,396 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="155,42"
-          Id="Package\Data Flow Task"
-          TopLeft="338,350" />
+          Size="196,42"
+          Id="Package\Add News Inscripciones"
+          TopLeft="502,249" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="422,246">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="178,3"
+              Start="0,0"
+              End="178,-4.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-18.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-18.5"
+                    Point2="0,-22.5"
+                    Point3="4,-22.5" />
+                  <mssgle:LineSegment
+                    End="174,-22.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="174,-22.5"
+                    Point2="178,-22.5"
+                    Point3="178,-18.5" />
+                  <mssgle:LineSegment
+                    End="178,-4.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="197,42"
+          Id="Package\Sync Inscripciones Data"
+          TopLeft="292,336" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="600,291">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-209.5,45"
+              Start="0,0"
+              End="-209.5,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.5"
+                    Point2="0,22.5"
+                    Point3="-4,22.5" />
+                  <mssgle:LineSegment
+                    End="-205.5,22.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-205.5,22.5"
+                    Point2="-209.5,22.5"
+                    Point3="-209.5,26.5" />
+                  <mssgle:LineSegment
+                    End="-209.5,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Update Last Row"
+          TopLeft="304,421" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="388,378">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43"
+              Start="0,0"
+              End="0,35.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\Data Flow Task">
+    design-time-name="Package\Add News Inscripciones">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="169,42"
-          Id="Package\Data Flow Task\Get Row Changes"
+          Id="Package\Add News Inscripciones\Get Row Changes"
           TopLeft="397,38" />
+        <NodeLayout
+          Size="159,42"
+          Id="Package\Add News Inscripciones\Lookup Docente"
+          TopLeft="413,117" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Add News Inscripciones\Lookup Materia"
+          TopLeft="411,186" />
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Add News Inscripciones\Lookup Estudiante"
+          TopLeft="404,264" />
+        <EdgeLayout
+          Id="Package\Add News Inscripciones.Paths[OLE DB Source Output]"
+          TopLeft="481.5,80">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="11,37"
+              Start="0,0"
+              End="11,29.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.5"
+                    Point2="0,18.5"
+                    Point3="4,18.5" />
+                  <mssgle:LineSegment
+                    End="7,18.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="7,18.5"
+                    Point2="11,18.5"
+                    Point3="11,22.5" />
+                  <mssgle:LineSegment
+                    End="11,29.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Add News Inscripciones.Paths[Lookup Match Output]"
+          TopLeft="490.5,159">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,27"
+              Start="0,0"
+              End="0,19.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,3.9453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Add News Inscripciones.Paths[Lookup Match Output1]"
+          TopLeft="488.75,228">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36"
+              Start="0,0"
+              End="0,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,8.4453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="149,42"
+          Id="Package\Add News Inscripciones\LOAD Staging"
+          TopLeft="235,344" />
+        <NodeLayout
+          Size="196,42"
+          Id="Package\Add News Inscripciones\Add News Inscripciones"
+          TopLeft="497,361" />
+        <EdgeLayout
+          Id="Package\Add News Inscripciones.Paths[Lookup Match Output2]"
+          TopLeft="462,306">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-152.5,38"
+              Start="0,0"
+              End="-152.5,30.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11.4125874125874" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.4125874125874"
+                    Point2="0,15.4125874125874"
+                    Point3="-4,15.4125874125874" />
+                  <mssgle:LineSegment
+                    End="-148.5,15.4125874125874" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-148.5,15.4125874125874"
+                    Point2="-152.5,15.4125874125874"
+                    Point3="-152.5,19.4125874125874" />
+                  <mssgle:LineSegment
+                    End="-152.5,30.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-124.44138671875,20.4125874125874,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Add News Inscripciones.Paths[Lookup No Match Output]"
+          TopLeft="516,306">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="79,55"
+              Start="0,0"
+              End="79,47.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.3076923076923" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.3076923076923"
+                    Point2="0,22.3076923076923"
+                    Point3="4,22.3076923076923" />
+                  <mssgle:LineSegment
+                    End="75,22.3076923076923" />
+                  <mssgle:CubicBezierSegment
+                    Point1="75,22.3076923076923"
+                    Point2="79,22.3076923076923"
+                    Point3="79,26.3076923076923" />
+                  <mssgle:LineSegment
+                    End="79,47.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-16.30638671875,27.3076923076923,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Get Row Changes">
+    design-time-name="Package\Add News Inscripciones\Get Row Changes">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Add News Inscripciones\Lookup Docente">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimDocente]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Add News Inscripciones\Lookup Materia">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimMateria]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Add News Inscripciones\Lookup Estudiante">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimEstudiante]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Add News Inscripciones\LOAD Staging">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Add News Inscripciones\Add News Inscripciones">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
