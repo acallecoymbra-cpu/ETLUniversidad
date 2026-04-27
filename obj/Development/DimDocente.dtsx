@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="57"
-  DTS:VersionGUID="{60558E03-47E9-437A-BE9C-5B5E0196A6BB}">
+  DTS:VersionBuild="66"
+  DTS:VersionGUID="{9F64C3D2-DEB9-409D-8483-478B37DB8592}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -593,7 +593,7 @@
                   expressionType="Notify"
                   name="SqlCommandParam"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimDocente]) [refTable]
-where [refTable].[DocenteKey] = ?</property>
+where [refTable].[DocenteID] = ?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the type of connection used to access the reference dataset."
@@ -661,7 +661,7 @@ where [refTable].[DocenteKey] = ?</property>
                         <property
                           dataType="System.String"
                           description="Specifies the column in the reference table that a column joins."
-                          name="JoinToReferenceColumn">DocenteKey</property>
+                          name="JoinToReferenceColumn">DocenteID</property>
                         <property
                           dataType="System.Null"
                           description="Specifies the column in the reference table from which a column is copied."
@@ -692,6 +692,20 @@ where [refTable].[DocenteKey] = ?</property>
                           dataType="System.String"
                           description="Specifies the column in the reference table from which a column is copied."
                           name="CopyFromReferenceColumn">DocenteKey</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Add New Docentes\Lookup.Outputs[Lookup Match Output].Columns[DocenteID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Add New Docentes\Lookup.Outputs[Lookup Match Output].Columns[DocenteID]"
+                      name="DocenteID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">DocenteID</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -1096,9 +1110,7 @@ where [refTable].[DocenteKey] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1133,7 +1145,7 @@ where [refTable].[DocenteKey] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="31.7769466145833,47.8644939965694,111.6127734375,11.609375"
+              BoundingBox="31.7769466145835,47.8644939965694,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -1182,7 +1194,7 @@ where [refTable].[DocenteKey] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>

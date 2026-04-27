@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="DimEstudiante"
   DTS:PackageType="5"
-  DTS:VersionBuild="39"
-  DTS:VersionGUID="{C0BE57B4-055F-41CB-8272-0AA8266B2742}">
+  DTS:VersionBuild="43"
+  DTS:VersionGUID="{D8827A79-C86C-454D-97DD-F0814BEAEA39}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -593,7 +593,7 @@
                   expressionType="Notify"
                   name="SqlCommandParam"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimEstudiante]) [refTable]
-where [refTable].[EstudianteKey] = ?</property>
+where [refTable].[EstudianteID] = ?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the type of connection used to access the reference dataset."
@@ -661,7 +661,7 @@ where [refTable].[EstudianteKey] = ?</property>
                         <property
                           dataType="System.String"
                           description="Specifies the column in the reference table that a column joins."
-                          name="JoinToReferenceColumn">EstudianteKey</property>
+                          name="JoinToReferenceColumn">EstudianteID</property>
                         <property
                           dataType="System.Null"
                           description="Specifies the column in the reference table from which a column is copied."
@@ -692,6 +692,20 @@ where [refTable].[EstudianteKey] = ?</property>
                           dataType="System.String"
                           description="Specifies the column in the reference table from which a column is copied."
                           name="CopyFromReferenceColumn">EstudianteKey</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Add New Estudiantes\Lookup.Outputs[Lookup Match Output].Columns[EstudianteID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Add New Estudiantes\Lookup.Outputs[Lookup Match Output].Columns[EstudianteID]"
+                      name="EstudianteID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">EstudianteID</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -908,6 +922,14 @@ where [refTable].[EstudianteKey] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="184,42"
+          Id="Package\Add New Estudiantes"
+          TopLeft="541,211" />
+        <NodeLayout
+          Size="159,42"
+          Id="Package\Eliminar filas Staging"
+          TopLeft="343,213" />
+        <NodeLayout
           Size="212,42"
           Id="Package\Get Database Row Version"
           TopLeft="310,40" />
@@ -915,14 +937,6 @@ where [refTable].[EstudianteKey] = ?</property>
           Size="214,42"
           Id="Package\Get Estudiante RowVersion"
           TopLeft="311,124" />
-        <NodeLayout
-          Size="159,42"
-          Id="Package\Eliminar filas Staging"
-          TopLeft="343,213" />
-        <NodeLayout
-          Size="184,42"
-          Id="Package\Add New Estudiantes"
-          TopLeft="541,211" />
         <NodeLayout
           Size="185,42"
           Id="Package\Sync Estudiante Data"
@@ -1062,13 +1076,21 @@ where [refTable].[EstudianteKey] = ?</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="115,42"
+          Id="Package\Add New Estudiantes\Lookup"
+          TopLeft="493,169" />
+        <NodeLayout
+          Size="189,42"
+          Id="Package\Add New Estudiantes\Add News Estudiantes"
+          TopLeft="689,301" />
+        <NodeLayout
           Size="169,42"
           Id="Package\Add New Estudiantes\Get Row Changes"
           TopLeft="476,78" />
         <NodeLayout
-          Size="115,42"
-          Id="Package\Add New Estudiantes\Lookup"
-          TopLeft="493,169" />
+          Size="149,42"
+          Id="Package\Add New Estudiantes\LOAD Staging"
+          TopLeft="393,294" />
         <EdgeLayout
           Id="Package\Add New Estudiantes.Paths[OLE DB Source Output]"
           TopLeft="560.5,120">
@@ -1101,50 +1123,6 @@ where [refTable].[EstudianteKey] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="149,42"
-          Id="Package\Add New Estudiantes\LOAD Staging"
-          TopLeft="393,294" />
-        <NodeLayout
-          Size="189,42"
-          Id="Package\Add New Estudiantes\Add News Estudiantes"
-          TopLeft="689,301" />
-        <EdgeLayout
-          Id="Package\Add New Estudiantes.Paths[Lookup Match Output]"
-          TopLeft="550.5,211">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-83,83"
-              Start="0,0"
-              End="-83,75.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,37.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,37.5"
-                    Point2="0,41.5"
-                    Point3="-4,41.5" />
-                  <mssgle:LineSegment
-                    End="-79,41.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-79,41.5"
-                    Point2="-83,41.5"
-                    Point3="-83,45.5" />
-                  <mssgle:LineSegment
-                    End="-83,75.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-89.69138671875,46.5,96.3827734375,11.609375"
-              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1183,17 +1161,45 @@ where [refTable].[EstudianteKey] = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Add New Estudiantes.Paths[Lookup Match Output]"
+          TopLeft="550.5,211">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-83,83"
+              Start="0,0"
+              End="-83,75.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,37.5"
+                    Point2="0,41.5"
+                    Point3="-4,41.5" />
+                  <mssgle:LineSegment
+                    End="-79,41.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-79,41.5"
+                    Point2="-83,41.5"
+                    Point3="-83,45.5" />
+                  <mssgle:LineSegment
+                    End="-83,75.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-89.69138671875,46.5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Add New Estudiantes\Get Row Changes">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Add New Estudiantes\Lookup">
     <Properties>
@@ -1210,7 +1216,7 @@ where [refTable].[EstudianteKey] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -1218,7 +1224,7 @@ where [refTable].[EstudianteKey] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Add New Estudiantes\LOAD Staging">
+    design-time-name="Package\Add New Estudiantes\Add News Estudiantes">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -1231,7 +1237,15 @@ where [refTable].[EstudianteKey] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Add New Estudiantes\Add News Estudiantes">
+    design-time-name="Package\Add New Estudiantes\Get Row Changes">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Add New Estudiantes\LOAD Staging">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

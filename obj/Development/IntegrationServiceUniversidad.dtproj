@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">DESKTOP-9GVKA0V</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAATzCkIylhY0mt6ICVkZvxpgAAAAACAAAAAAAQZgAAAAEAACAAAADBmItQolDk2HF4qtaStc7nP5Id7F551aPU4KU/vnDrRQAAAAAOgAAAAAIAACAAAACVvyQkCSJ0KRiXexkM2+aA2pwLGc+FWW6KzMtbW5/8aZAAAACTmBz4Q+cyy/aBItMCek/T/x0ZPf5R6l6l2h+xAOqY1XEkseWKorTwqbaFW3cn0Fh+mlUT3hJsWtJNOSCunC4vjCCS+zy9TyMXGS3RiSjsfeDrzHtN46e/n6FQ5zToOCQtn7iRnGF13u88ZN9mEFXuaxAwCopbJN+5wkIy9dpivDAulq5ichb/iGeoONOc2wBAAAAAF3NFJqylUDVpJ9iHd0kJFKA0kJpBEbbtT0R58tEzrl5Tp7vbkvo4qI2QRi8bDbjFdwmjA7YyFqvO1F4f9v77rw==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAATzCkIylhY0mt6ICVkZvxpgAAAAACAAAAAAAQZgAAAAEAACAAAADcM6tc4a6lbRKlA8HIVDVN8lpphBmdziVnWMyvsqhvKwAAAAAOgAAAAAIAACAAAADrOZGbRuLmeavJwv2LZvm6GZflShkjVfpypJbP+guj5JAAAAANqIZj4TuuPuEfRMB9NzceRE6ostPsLi2cJ+pZuRG72lH970myPBKwajNNTtENdvv5aZUkMD+0riyKyvIYOp1jK9NqeEBG6MQfPWvOhufhIrrHubv5zQxmPnR+dOybZFFiivZOa0p81W8m+TxOJd3QvIkPKR0jehLwoH7lc61vvw8vTsUZEMVPmSFwrlqQUN1AAAAAOzGc59+QC6Zl+miGv5lRXEueEkYlwFCZ9xw23LbRleSg9nT7KMqmKXFLUCl3RYnizwj0CgomRYQsyzlif626Tw==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -45,10 +45,10 @@
                 <SSIS:Property SSIS:Name="Name">DimEstudiante</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">28</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">43</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{3AE80580-C7D4-4B1F-A5A7-AF8FC5D643C7}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{D8827A79-C86C-454D-97DD-F0814BEAEA39}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -359,10 +359,10 @@
                 <SSIS:Property SSIS:Name="Name">DimMateria</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">30</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">45</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{3AA21AD9-C14D-44E0-A4B4-55A5F92B9842}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{0300C4EB-4DA3-4EC0-A11E-E1769DF0FC21}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -673,10 +673,10 @@
                 <SSIS:Property SSIS:Name="Name">Package1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">57</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">66</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{60558E03-47E9-437A-BE9C-5B5E0196A6BB}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{9F64C3D2-DEB9-409D-8483-478B37DB8592}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -987,10 +987,10 @@
                 <SSIS:Property SSIS:Name="Name">Package1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">43</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">51</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{B13503F2-A9CE-41B6-8452-E784ABFB54A9}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{B6CAF077-9977-4548-92D8-44940930587C}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -1303,8 +1303,36 @@
   <ControlFlowParts />
   <Miscellaneous>
     <ProjectItem>
+      <Name>ANALISIS_EstudianteKeyAlignment.sql</Name>
+      <FullPath>Scripts\ANALISIS_EstudianteKeyAlignment.sql</FullPath>
+    </ProjectItem>
+    <ProjectItem>
       <Name>ANALISIS_INSCRIPCIONES_PROBLEMAS_SOLUCION.md</Name>
       <FullPath>ANALISIS_INSCRIPCIONES_PROBLEMAS_SOLUCION.md</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>ANALYSIS_LastRowVersion_Problem.md</Name>
+      <FullPath>Docs\ANALYSIS_LastRowVersion_Problem.md</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>EJECUTAR_RESET_COMPLETE.ps1</Name>
+      <FullPath>EJECUTAR_RESET_COMPLETE.ps1</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>FIX_EstudianteKeyAlignment.sql</Name>
+      <FullPath>Scripts\FIX_EstudianteKeyAlignment.sql</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>FIX_UpdateLastPackageRowVersion.sql</Name>
+      <FullPath>Scripts\FIX_UpdateLastPackageRowVersion.sql</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>GUIA_RESET_COMPLETO.md</Name>
+      <FullPath>GUIA_RESET_COMPLETO.md</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>LOOKUP_ESTUDIANTE_FIX.md</Name>
+      <FullPath>LOOKUP_ESTUDIANTE_FIX.md</FullPath>
     </ProjectItem>
     <ProjectItem>
       <Name>Plan_Implementacion_FactInscripciones.md</Name>
@@ -1313,6 +1341,14 @@
     <ProjectItem>
       <Name>README_FACTINSCRIPCIONES_FIX.md</Name>
       <FullPath>README_FACTINSCRIPCIONES_FIX.md</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>RESET_COMPLETE_DW_DataAlignment.sql</Name>
+      <FullPath>Scripts\RESET_COMPLETE_DW_DataAlignment.sql</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>SOLUCION_RAPIDA.md</Name>
+      <FullPath>SOLUCION_RAPIDA.md</FullPath>
     </ProjectItem>
     <ProjectItem>
       <Name>Validacion_FactInscripciones.sql</Name>
